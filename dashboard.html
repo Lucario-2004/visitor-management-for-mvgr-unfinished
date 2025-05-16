@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Purpose</th>
+                <th>In Time</th>
+                <th>Out Time</th>
+                <th>QR Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for visitor in visitors %}
+            <tr>
+                <td>{{ visitor.name }}</td>
+                <td>{{ visitor.phone }}</td>
+                <td>{{ visitor.purpose }}</td>
+                <td>{{ visitor.in_time }}</td>
+                <td>{{ visitor.out_time }}</td>
+                <td><img src="{{ visitor.qr_code }}" alt="QR Code"></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('add_visitor') }}">Add Visitor</a>
+</body>
+</html>

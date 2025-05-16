@@ -1,0 +1,21 @@
+CREATE TABLE security_guard (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+
+CREATE TABLE administrator (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+
+CREATE TABLE visitor (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    phone TEXT NOT NULL,
+    purpose TEXT NOT NULL,
+    in_time DATETIME NOT NULL,
+    out_time DATETIME,
+    qr_code TEXT NOT NULL
+);
